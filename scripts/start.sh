@@ -45,7 +45,7 @@ echo ""
 
 cd "$BUILD_DIR" || exit 1
 
-DEFAULT_PACKAGED_DB_PATH="/app/db/custom.db"
+DEFAULT_PACKAGED_DB_PATH="/app/database/custom.db"
 DEFAULT_PACKAGED_DATABASE_URL="file:$DEFAULT_PACKAGED_DB_PATH"
 
 # Start Next.js server
@@ -85,24 +85,24 @@ else
     echo "Warning: Next.js server file not found: ./next-service-dist/server.js"
 fi
 
-# Start mini-services
-if [ -f "./mini-services-start.sh" ]; then
-    echo "Starting mini-services..."
+# Start _services
+if [ -f "./_services-start.sh" ]; then
+    echo "Starting _services..."
 
-    sh ./mini-services-start.sh &
+    sh ./_services-start.sh &
     MINI_PID=$!
     pids="$pids $MINI_PID"
 
     sleep 1
     if ! kill -0 "$MINI_PID" 2>/dev/null; then
-        echo "Warning: mini-services may have failed to start"
+        echo "Warning: _services may have failed to start"
     else
-        echo "mini-services started (PID: $MINI_PID)"
+        echo "_services started (PID: $MINI_PID)"
     fi
-elif [ -d "./mini-services-dist" ]; then
-    echo "Warning: mini-services directory exists but start script not found"
+elif [ -d "./_services-dist" ]; then
+    echo "Warning: _services directory exists but start script not found"
 else
-    echo "No mini-services, skipping"
+    echo "No _services, skipping"
 fi
 
 # Start Caddy (if Caddyfile exists)

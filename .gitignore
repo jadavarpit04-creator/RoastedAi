@@ -49,18 +49,18 @@ prompt
 server.log
 
 # Database
-db/
+database/
 *.db
 *.db-journal
 
 # Skills directory
-skills/
+_skills/
 
 # Agent context
-agent-ctx/
+_context/
 
 # Mini services
-mini-services/
+_services/
 
 # Examples
 examples/

@@ -32,23 +32,23 @@ bun install
 echo "Building Next.js app..."
 bun run build
 
-# Build mini-services (if exists)
-if [ -d "$NEXTJS_PROJECT_DIR/mini-services" ]; then
-    echo "Building mini-services..."
-    if [ -f "$SCRIPT_DIR/mini-services-install.sh" ]; then
-        sh "$SCRIPT_DIR/mini-services-install.sh"
+# Build _services (if exists)
+if [ -d "$NEXTJS_PROJECT_DIR/_services" ]; then
+    echo "Building _services..."
+    if [ -f "$SCRIPT_DIR/_services-install.sh" ]; then
+        sh "$SCRIPT_DIR/_services-install.sh"
     fi
-    if [ -f "$SCRIPT_DIR/mini-services-build.sh" ]; then
-        sh "$SCRIPT_DIR/mini-services-build.sh"
+    if [ -f "$SCRIPT_DIR/_services-build.sh" ]; then
+        sh "$SCRIPT_DIR/_services-build.sh"
     fi
 
-    if [ -f "$SCRIPT_DIR/mini-services-start.sh" ]; then
-        echo "Copying mini-services-start.sh to $BUILD_DIR"
-        cp "$SCRIPT_DIR/mini-services-start.sh" "$BUILD_DIR/mini-services-start.sh"
-        chmod +x "$BUILD_DIR/mini-services-start.sh"
+    if [ -f "$SCRIPT_DIR/_services-start.sh" ]; then
+        echo "Copying _services-start.sh to $BUILD_DIR"
+        cp "$SCRIPT_DIR/_services-start.sh" "$BUILD_DIR/_services-start.sh"
+        chmod +x "$BUILD_DIR/_services-start.sh"
     fi
 else
-    echo "No mini-services directory, skipping"
+    echo "No _services directory, skipping"
 fi
 
 # Copy build outputs
@@ -71,22 +71,23 @@ if [ -d "public" ]; then
 fi
 
 # Copy database
-if [ -f "./db/custom.db" ]; then
+if [ -f "./database/custom.db" ]; then
     echo "Copying database..."
-    mkdir -p "$BUILD_DIR/db"
-    cp -r ./db/. "$BUILD_DIR/db/"
+    mkdir -p "$BUILD_DIR/database"
+    cp -r ./database/. "$BUILD_DIR/database/"
 
     echo "Syncing database schema..."
-    DATABASE_URL="file:$BUILD_DIR/db/custom.db" bun run db:push
+    DATABASE_URL="file:$BUILD_DIR/database/custom.db" bun run db:push
     echo "Database ready"
-    ls -lah "$BUILD_DIR/db"
+    ls -lah "$BUILD_DIR/database"
 else
-    echo "Warning: No database file found at ./db/custom.db"
+    echo "Warning: No database file found at ./database/custom.db"
 fi
 
 # Copy Caddyfile (if exists)
 if [ -f "Caddyfile" ]; then
     echo "  - Copying Caddyfile"
+    mkdir -p "$BUILD_DIR"
     cp Caddyfile "$BUILD_DIR/"
 fi
 
