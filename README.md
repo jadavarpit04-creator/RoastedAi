@@ -82,8 +82,10 @@ cd RoastedAi
 bun install
 
 # Set up environment variables
-cp .env.example .env
-# Edit .env with your API keys
+# .env is the template (already in repo with empty values)
+# Copy it to .env.local and fill in your API keys
+cp .env .env.local
+# Edit .env.local with your API keys
 
 # Push database schema
 bun run db:push
@@ -98,7 +100,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## ⚙️ Environment Variables
 
-Create a `.env` file based on `.env.example`:
+Create a `.env.local` file based on `.env` (template with empty values):
 
 ```env
 # Database
