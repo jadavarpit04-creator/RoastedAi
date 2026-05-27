@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -157,13 +157,13 @@ model Payment {
   amount              Int
   currency            String   @default("INR")
   plan                String
-  billingCycle        String   @default("monthly")  // monthly or yearly
-  status              String   @default("created")   // created, paid, failed, refunded
+  billingCycle        String   @default("monthly")
+  status              String   @default("created")
   gstAmount           Int      @default(0)
   gstRate             Float    @default(18.0)
   couponCode          String?
   discountAmount      Int      @default(0)
-  invoiceId           String?  // link to invoice
+  invoiceId           String?
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
 }
@@ -174,9 +174,9 @@ model Subscription {
   user                    User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   razorpaySubscriptionId  String?
   razorpayPlanId          String?
-  plan                    String    // starter, pro, enterprise
-  status                  String    @default("active") // active, cancelled, paused, expired, trial
-  billingCycle            String    @default("monthly") // monthly, yearly
+  plan                    String
+  status                  String    @default("active")
+  billingCycle            String    @default("monthly")
   currentPeriodStart      DateTime?
   currentPeriodEnd        DateTime?
   trialStart              DateTime?
@@ -204,10 +204,10 @@ model Invoice {
   couponCode      String?
   discountAmount  Int       @default(0)
   totalAmount     Int
-  status          String    @default("draft") // draft, paid, overdue, cancelled
+  status          String    @default("draft")
   plan            String
   billingCycle    String
-  billingPeriod   String    // e.g. "May 2026"
+  billingPeriod   String
   dueDate         DateTime?
   paidAt          DateTime?
   createdAt       DateTime  @default(now())
@@ -219,7 +219,7 @@ model Coupon {
   code            String    @unique
   name            String
   description     String?
-  discountType    String    // percentage, fixed
+  discountType    String
   discountValue   Int
   maxUses         Int?
   usedCount       Int       @default(0)
@@ -227,7 +227,7 @@ model Coupon {
   maxDiscount     Int?
   validFrom       DateTime
   validUntil      DateTime?
-  applicablePlans String?   // comma-separated plan keys or "all"
+  applicablePlans String?
   isActive        Boolean   @default(true)
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
@@ -237,8 +237,8 @@ model BillingLog {
   id          String   @id @default(cuid())
   userId      String
   user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  action      String    // payment_created, payment_verified, subscription_created, subscription_cancelled, refund_requested, coupon_applied, invoice_generated, plan_changed
-  details     String    // JSON string with event details
+  action      String
+  details     String
   amount      Int?
   status      String?
   createdAt   DateTime  @default(now())
@@ -248,11 +248,11 @@ model DailyUsage {
   id        String   @id @default(cuid())
   userId    String
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  date      DateTime  // The day this record tracks (stored at midnight UTC)
-  count     Int       @default(0)  // Number of web analyses used on this day (never decremented)
-  apiCount  Int       @default(0)  // Number of API analyses used on this day (never decremented)
+  date      DateTime
+  count     Int       @default(0)
+  apiCount  Int       @default(0)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 
-  @@unique([userId, date])  // One record per user per day
+  @@unique([userId, date])
 }
