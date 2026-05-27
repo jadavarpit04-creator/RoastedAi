@@ -78,53 +78,53 @@ Every analysis covers 7 critical website categories with individual 0-100 scores
 ## 🏗️ Tech Stack
 
 ### 🌐 Frontend
-| Technology | Purpose |
-|-----------|---------|
-| ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&style=flat-square) | Primary language — type-safe development across the entire app |
-| ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&style=flat-square) | UI library — component-based architecture |
-| ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&style=flat-square) | React framework — App Router, SSR, Turbopack |
-| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&style=flat-square) | Utility-first CSS framework |
-| ![shadcn/ui](https://img.shields.io/badge/shadcn/ui-UI-000?style=flat-square) | 35+ accessible, customizable UI components |
-| ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-FF0055?logo=framer&style=flat-square) | Page transitions, scroll animations, hover effects |
-| ![Zustand](https://img.shields.io/badge/Zustand-5-FF6B35?style=flat-square) | Lightweight client state management |
-| ![Lucide](https://img.shields.io/badge/Lucide_React-Icons-FF6347?style=flat-square) | 1,000+ beautiful open-source icons |
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| **TypeScript** | 5 | Primary language — type-safe development across the entire app |
+| **React** | 19 | UI library — component-based architecture |
+| **Next.js** | 16 | React framework — App Router, SSR, Turbopack |
+| **Tailwind CSS** | 4 | Utility-first CSS framework |
+| **shadcn/ui** | — | 35+ accessible, customizable UI components |
+| **Framer Motion** | 12 | Page transitions, scroll animations, hover effects |
+| **Zustand** | 5 | Lightweight client state management |
+| **Lucide React** | — | 1,000+ beautiful open-source icons |
 
 ### ⚙️ Backend & API
-| Technology | Purpose |
-|-----------|---------|
-| ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&style=flat-square) | API route handlers — fully type-safe backend |
-| ![Next.js API](https://img.shields.io/badge/Next.js_API_Routes-32-black?logo=next.js&style=flat-square) | Serverless API endpoints (analyze, auth, payments, etc.) |
-| ![Prisma](https://img.shields.io/badge/Prisma_ORM-6-2D3748?logo=prisma&style=flat-square) | Type-safe database queries, schema migrations |
-| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql&style=flat-square) | Persistent cloud database (Neon serverless) |
-| ![NextAuth.js](https://img.shields.io/badge/NextAuth.js-v4-000?style=flat-square) | Session management, JWT, CSRF protection |
-| ![Firebase](https://img.shields.io/badge/Firebase_Google_OAuth-Auth-FFCA28?logo=firebase&style=flat-square) | Google sign-in authentication |
-| ![Razorpay](https://img.shields.io/badge/Razorpay-Payments-0066FF?logo=razorpay&style=flat-square) | Payment gateway, subscriptions, GST invoices |
-| ![Zod](https://img.shields.io/badge/Zod-4-3068B7?style=flat-square) | API request/response validation |
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| **TypeScript** | 5 | API route handlers — fully type-safe backend |
+| **Next.js API Routes** | 32 endpoints | Serverless API (analyze, auth, payments, etc.) |
+| **Prisma ORM** | 6 | Type-safe database queries, schema migrations |
+| **PostgreSQL (Neon)** | — | Persistent cloud database (serverless) |
+| **NextAuth.js** | v4 | Session management, JWT, CSRF protection |
+| **Firebase** | — | Google OAuth sign-in authentication |
+| **Razorpay** | — | Payment gateway, subscriptions, GST invoices |
+| **Zod** | 4 | API request/response validation |
 
 ### 🤖 AI & LLM
-| Technology | Purpose |
-|-----------|---------|
-| ![OpenAI SDK](https://img.shields.io/badge/OpenAI_SDK-6-412991?logo=openai&style=flat-square) | OpenAI-compatible API client |
-| ![NVIDIA NIM](https://img.shields.io/badge/NVIDIA_NIM-LLM-76B900?logo=nvidia&style=flat-square) | Llama 3.3 70B inference (default provider) |
-| **Custom Prompts** | 7-category analysis, savage mode, tech detection |
-| **Hybrid Detection** | 250+ regex rules + AI verification |
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| **OpenAI SDK** | 6 | OpenAI-compatible API client |
+| **NVIDIA NIM** | — | Llama 3.3 70B inference (default provider) |
+| **Custom Prompts** | — | 7-category analysis, savage mode, tech detection |
+| **Hybrid Detection** | — | 250+ regex rules + AI verification |
 
 ### 🧰 DevOps & Tools
-| Technology | Purpose |
-|-----------|---------|
-| ![Vercel](https://img.shields.io/badge/Vercel-Deploy-000?logo=vercel&style=flat-square) | Production hosting & serverless deployment |
-| ![GitHub](https://img.shields.io/badge/GitHub-CI/CD-181717?logo=github&style=flat-square) | Version control & collaboration |
-| ![ESLint](https://img.shields.io/badge/ESLint-9-4B32C3?logo=eslint&style=flat-square) | Code quality & consistency |
-| ![Bun](https://img.shields.io/badge/Bun-Runtime-000?logo=bun&style=flat-square) | Fast JavaScript runtime & package manager |
-| ![Prisma](https://img.shields.io/badge/Prisma_Migrate-DB-2D3748?logo=prisma&style=flat-square) | Database schema management & migrations |
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| **Vercel** | — | Production hosting & serverless deployment |
+| **GitHub** | — | Version control & collaboration |
+| **ESLint** | 9 | Code quality & consistency |
+| **Bun** | — | Fast JavaScript runtime & package manager |
+| **Prisma Migrate** | — | Database schema management & migrations |
 
 ### 📊 Languages Breakdown
 
-```
-TypeScript  ████████████████████████████████████████  98.2%
-CSS         ██                                      1.5%
-SQL         █                                       0.3%
-```
+| Language | Percentage | Usage |
+|----------|-----------|-------|
+| **TypeScript** | 98.2% | Frontend components, API routes, services, hooks |
+| **CSS** | 1.5% | Global styles, Tailwind config |
+| **SQL** | 0.3% | Prisma schema definitions |
 
 > **💡 LLM Flexibility:** The AI engine uses an OpenAI-compatible client, so you can swap NVIDIA NIM for **OpenAI**, **Groq**, **Together AI**, **Ollama**, or any OpenAI-compatible API by just changing 3 environment variables.
 
