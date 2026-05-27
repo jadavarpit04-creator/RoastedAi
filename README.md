@@ -77,18 +77,54 @@ Every analysis covers 7 critical website categories with individual 0-100 scores
 
 ## 🏗️ Tech Stack
 
-| Category | Technology | Purpose |
-|----------|-----------|---------|
-| **Framework** | [Next.js 16](https://nextjs.org/) | React framework with App Router & Turbopack |
-| **Language** | [TypeScript 5](https://www.typescriptlang.org/) | Type-safe development |
-| **Styling** | [Tailwind CSS 4](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) | Utility-first CSS + accessible components |
-| **Database** | [Prisma ORM](https://www.prisma.io/) + SQLite | Type-safe database queries |
-| **Auth** | [NextAuth.js v4](https://next-auth.js.org/) + [Firebase](https://firebase.google.com/) | OAuth authentication |
-| **Payments** | [Razorpay](https://razorpay.com/) | Payment gateway & subscriptions |
-| **AI/LLM** | [NVIDIA NIM API](https://build.nvidia.com/) | OpenAI-compatible LLM (swap to any provider) |
-| **State** | [Zustand](https://zustand-demo.pmnd.rs/) | Lightweight client state management |
-| **Animations** | [Framer Motion](https://www.framer.com/motion/) | Smooth page transitions & interactions |
-| **Icons** | [Lucide React](https://lucide.dev/) | Beautiful open-source icons |
+### 🌐 Frontend
+| Technology | Purpose |
+|-----------|---------|
+| ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&style=flat-square) | Primary language — type-safe development across the entire app |
+| ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&style=flat-square) | UI library — component-based architecture |
+| ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&style=flat-square) | React framework — App Router, SSR, Turbopack |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&style=flat-square) | Utility-first CSS framework |
+| ![shadcn/ui](https://img.shields.io/badge/shadcn/ui-UI-000?style=flat-square) | 35+ accessible, customizable UI components |
+| ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-FF0055?logo=framer&style=flat-square) | Page transitions, scroll animations, hover effects |
+| ![Zustand](https://img.shields.io/badge/Zustand-5-FF6B35?style=flat-square) | Lightweight client state management |
+| ![Lucide](https://img.shields.io/badge/Lucide_React-Icons-FF6347?style=flat-square) | 1,000+ beautiful open-source icons |
+
+### ⚙️ Backend & API
+| Technology | Purpose |
+|-----------|---------|
+| ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&style=flat-square) | API route handlers — fully type-safe backend |
+| ![Next.js API](https://img.shields.io/badge/Next.js_API_Routes-32-black?logo=next.js&style=flat-square) | Serverless API endpoints (analyze, auth, payments, etc.) |
+| ![Prisma](https://img.shields.io/badge/Prisma_ORM-6-2D3748?logo=prisma&style=flat-square) | Type-safe database queries, schema migrations |
+| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql&style=flat-square) | Persistent cloud database (Neon serverless) |
+| ![NextAuth.js](https://img.shields.io/badge/NextAuth.js-v4-000?style=flat-square) | Session management, JWT, CSRF protection |
+| ![Firebase](https://img.shields.io/badge/Firebase_Google_OAuth-Auth-FFCA28?logo=firebase&style=flat-square) | Google sign-in authentication |
+| ![Razorpay](https://img.shields.io/badge/Razorpay-Payments-0066FF?logo=razorpay&style=flat-square) | Payment gateway, subscriptions, GST invoices |
+| ![Zod](https://img.shields.io/badge/Zod-4-3068B7?style=flat-square) | API request/response validation |
+
+### 🤖 AI & LLM
+| Technology | Purpose |
+|-----------|---------|
+| ![OpenAI SDK](https://img.shields.io/badge/OpenAI_SDK-6-412991?logo=openai&style=flat-square) | OpenAI-compatible API client |
+| ![NVIDIA NIM](https://img.shields.io/badge/NVIDIA_NIM-LLM-76B900?logo=nvidia&style=flat-square) | Llama 3.3 70B inference (default provider) |
+| **Custom Prompts** | 7-category analysis, savage mode, tech detection |
+| **Hybrid Detection** | 250+ regex rules + AI verification |
+
+### 🧰 DevOps & Tools
+| Technology | Purpose |
+|-----------|---------|
+| ![Vercel](https://img.shields.io/badge/Vercel-Deploy-000?logo=vercel&style=flat-square) | Production hosting & serverless deployment |
+| ![GitHub](https://img.shields.io/badge/GitHub-CI/CD-181717?logo=github&style=flat-square) | Version control & collaboration |
+| ![ESLint](https://img.shields.io/badge/ESLint-9-4B32C3?logo=eslint&style=flat-square) | Code quality & consistency |
+| ![Bun](https://img.shields.io/badge/Bun-Runtime-000?logo=bun&style=flat-square) | Fast JavaScript runtime & package manager |
+| ![Prisma](https://img.shields.io/badge/Prisma_Migrate-DB-2D3748?logo=prisma&style=flat-square) | Database schema management & migrations |
+
+### 📊 Languages Breakdown
+
+```
+TypeScript  ████████████████████████████████████████  98.2%
+CSS         ██                                      1.5%
+SQL         █                                       0.3%
+```
 
 > **💡 LLM Flexibility:** The AI engine uses an OpenAI-compatible client, so you can swap NVIDIA NIM for **OpenAI**, **Groq**, **Together AI**, **Ollama**, or any OpenAI-compatible API by just changing 3 environment variables.
 
