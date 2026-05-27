@@ -28,9 +28,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
-.env*
-!.env.example
+# env files - .env is the template (tracked), .env.local has real secrets (ignored)
+.env.local
+.env.*
+!.env
 
 # vercel
 .vercel
