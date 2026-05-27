@@ -104,7 +104,7 @@ Create a `.env.local` file based on `.env` (template with empty values):
 
 ```env
 # Database
-DATABASE_URL=file:./database/custom.db
+DATABASE_URL=file:../database/custom.db
 
 # Razorpay Payment Gateway
 RAZORPAY_KEY_ID=your_key_id
